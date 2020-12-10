@@ -1,0 +1,7 @@
+import json
+import boto3
+
+client=boto3.client('iot-data',region_name='us-east-2')
+
+def lambda_handler(event,context):
+    response=client.publish(topic='YourPublishTopic', qos=1, payload='o')
